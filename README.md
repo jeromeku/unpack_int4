@@ -12,6 +12,8 @@ In order to do this, the weights need to be unpacked from the packed format.  Al
 ## Features
 Custom CUDA implementation along with glue functions to register as a custom op that can be called with `torch.compile`.
 
+The implementation is largely an adaptation of the original packing code, with same indexing logic.
+
 ## Tests
 See `tests/test_unpack.py` for both correctness as well as for correct custom op registration.  Note that currently the custom op tests pass except for `test_aot_dispatch_dynamic`.
 
