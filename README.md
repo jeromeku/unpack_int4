@@ -16,4 +16,14 @@ Custom CUDA implementation along with glue functions to register as a custom op 
 See `tests/test_unpack.py` for both correctness as well as for correct custom op registration.  Note that currently the custom op tests pass except for `test_aot_dispatch_dynamic`.
 
 ## Benchmarks
-See `benchmarks/unpack_bench.py` against a reference torch-native unpacking implementation.
+See `benchmarks/unpack_bench.py` for benchmark comparing the cuda extension vs. compiled cuda vs. a reference (compiled) torch-native implementation.
+
+To run against a battery of shapes:
+```
+python benchmarks/unpack_bench.py
+```
+
+Run against a single shape:
+```
+python benchmarks/unpack_bench.py --shape 8192 8192
+```
