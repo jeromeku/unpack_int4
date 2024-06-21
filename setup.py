@@ -42,13 +42,12 @@ def get_extensions():
     return ext_modules
 
 
-get_extensions()
 setup(
     name=library_name,
     version="0.0.1",
     packages=find_packages(),
     ext_modules=get_extensions(),
-    install_requires=["torch"],
+    # install_requires=["torch"],
     description="Unpacking utils for torch tinygemm",
     cmdclass={"build_ext": BuildExtension},
 )
