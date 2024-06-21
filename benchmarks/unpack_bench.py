@@ -65,9 +65,19 @@ def run_bench(shapes, kInnerTilesK, check=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--shape", type=int, nargs=2, default=(None, None))
-    parser.add_argument("--k_tiles", type=int, default=8)
-    parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--shape",
+        type=int,
+        nargs=2,
+        default=(None, None),
+        help="Shape to benchmark, e.g. 8192 8192",
+    )
+    parser.add_argument("--k_tiles", type=int, default=8, help="InnerKTiles: 2, 4, 8")
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Additional sanity check that unpacking results in original tensor",
+    )
     args = parser.parse_args()
 
     assert len(args.shape) == 2

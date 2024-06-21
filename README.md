@@ -14,3 +14,6 @@ Custom CUDA implementation along with glue functions to register as a custom op 
 
 ## Tests
 See `tests/test_unpack.py` for both correctness as well as for correct custom op registration.  Note that currently the custom op tests pass except for `test_aot_dispatch_dynamic`.
+
+## Benchmarks
+See `benchmarks/unpack_bench.py` against a reference torch-native unpacking implementation.

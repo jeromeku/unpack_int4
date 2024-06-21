@@ -1,6 +1,7 @@
 import torch
 
 
+# All the code below is copied from @KeremTurgutlu
 def reshape_packed(packed_tensor):
     inner_k_tiles = packed_tensor.size(-1) * 2
     return (
